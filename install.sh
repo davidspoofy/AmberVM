@@ -1,22 +1,22 @@
-git clone https://github.com/Blobby-Boi/BlobeVM
-cd BlobeVM
+git clone https://github.com/davidspoofy/AmberVM
+cd AmberVM
 pip install textual
 sleep 2
 python3 installer.py
-docker build -t blobevm . --no-cache
+docker build -t ambervm . --no-cache
 cd ..
 
 sudo apt update
 sudo apt install -y jq
 
 mkdir Save
-cp -r BlobeVM/root/config/* Save
+cp -r AmberVM/root/config/* Save
 
-json_file="BlobeVM/options.json"
+json_file="AmberVM/options.json"
 if jq ".enablekvm" "$json_file" | grep -q true; then
-    docker run -d --name=BlobeVM -e PUID=1000 -e PGID=1000 --device=/dev/kvm --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=BlobeVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped blobevm
+    docker run -d --name=AmberVM-e PUID=1000 -e PGID=1000 --device=/dev/kvm --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=AmberVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped ambervm
 else
-    docker run -d --name=BlobeVM -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=BlobeVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped blobevm
+    docker run -d --name=AmberVM -e PUID=1000 -e PGID=1000 --security-opt seccomp=unconfined -e TZ=Etc/UTC -e SUBFOLDER=/ -e TITLE=AmberVM -p 3000:3000 --shm-size="2gb" -v $(pwd)/Save:/config --restart unless-stopped ambervm
 fi
 clear
-echo "BLOBEVM WAS INSTALLED SUCCESSFULLY! Check Port Tab"
+echo "AmberVM Installed with 0 errors."
