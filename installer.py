@@ -12,18 +12,10 @@ def savejson(json):
 #####################
 
 Head="""
-# BlobeVM Installer
+# Amber Installer
 
-> BlobeVM (Powered by DesktopOnCodespaces)
-
-BlobeVM is a Virtual Machine that...
-* Runs entirely in a web browser
-* Is unblocked
-* Has Windows app support
-* Has audio support
-* Can run games with almost no lag
-* Can Bypass School Network
-* Is very fast
+> AmberVM (Powered by DesktopOnCodespaces)
+ - Neat 
 """
 InstallHead="""
 # BlobeVM Installer
