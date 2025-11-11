@@ -18,7 +18,7 @@ Head="""
  - Neat 
 """
 InstallHead="""
-# BlobeVM Installer
+# AmberVM Installer
 """     
 
 LINES = ["KDE Plasma (Heavy)", "XFCE4 (Lightweight)", "I3 (Very Lightweight)", "GNOME 42 (Very Heavy)", "Cinnamon", "LXQT"]
